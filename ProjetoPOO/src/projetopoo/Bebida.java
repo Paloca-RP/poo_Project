@@ -6,6 +6,7 @@ public class Bebida extends Produto{
     
     public Bebida(String nome, double preco, int iva) {
         super(nome, preco, iva);
+        
     }
     
 }
