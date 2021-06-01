@@ -2,22 +2,34 @@ package projetopoo;
 
 public class Produto {
     
-   private String nome;
-   private double preco;
-   private int iva;
-   
-   public Produto (String nome, double preco, int iva){
-       if(nome!=null)
-           this.nome=nome;
-       else
-           this.nome="";
-       if(preco>=0)
-           this.preco=preco;
-       else
-           this.preco=-1;
-       if(iva==6||iva==13||iva==23)
-           this.iva=iva;
-       else
-           this.iva=-1;
-   }
+    private String nome;
+    private double preco;
+    private int iva;
+
+    public Produto (String nome, double preco, int iva){
+        this.nome=validarNome(nome);
+        this.preco=validarPreco(preco);
+        this.iva=validarIva(iva);
+    }
+
+    public String validarNome(String nome){
+        if(nome!=null)
+            return nome;
+        else
+            return "";
+    }
+
+    public double validarPreco(double preco){
+        if(preco>0)
+            return preco;
+        else
+            return 0;
+    }
+    
+    public int validarIva(int iva){
+        if(iva==6||iva==13||iva==23)
+            return iva;
+        else
+            return 0;
+    }
 }
