@@ -17,4 +17,11 @@ public class Bebida extends Produto{
         
     }
     
+    public String validarCapacidade(String capacidade){
+        if(capacidade=="Pequeno"||capacidade=="Médio"||capacidade=="Grande")
+            return capacidade;
+        else
+            return "";
+    }
+    
 }
