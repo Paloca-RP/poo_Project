@@ -4,7 +4,11 @@ public class ProjetoPOO {
     
     public static void main(String[] args) {
         //BEBIDAS
-        
+        Bebida Imperial=new Bebida("Imperial",1.40,TaxaIva.VINTETRES,Tamanho.GRANDE,true);
+        Bebida Refrigerante=new Bebida("Refrigerante",1.40,TaxaIva.VINTETRES,Tamanho.MEDIO,false);
+        Bebida AguaPeq=new Bebida("Água",0.80,TaxaIva.SEIS,Tamanho.PEQUENO,false);
+        Bebida AguaMed=new Bebida("Água",1,TaxaIva.SEIS,Tamanho.MEDIO,false);
+        Bebida AguaGran=new Bebida("Água",1.10,TaxaIva.SEIS,Tamanho.GRANDE,false);
         
         //DOCES
         Doce Mousse=new Doce("Mousse",1.50,TaxaIva.VINTETRES,"Mousse de Chocolate",true);
