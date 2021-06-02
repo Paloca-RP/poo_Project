@@ -5,10 +5,14 @@ public class Prato extends Produto{
     
     public Prato(String nome, double preco, int iva, String descricao) {
         super(nome, preco, iva);
+        this.descricao=validardescricao(descricao);
+    }
+    
+    public String validardescricao(String descricao){
         if(descricao!=null)
-            this.descricao=descricao;
+            return descricao;
         else
-            this.descricao="";
+            return "";
     }
     
 }

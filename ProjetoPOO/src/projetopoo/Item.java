@@ -5,10 +5,21 @@ public class Item{
     private int quantidade;
     
     public Item(Produto produto, int quantidade){
-        this.produto=produto;
-        if(quantidade>=0)
-            this.quantidade=quantidade;
+        this.produto=validarProduto(produto);
+        this.quantidade=validarQuantidade(quantidade);
+    }
+    
+    public Produto validarProduto(Produto produto){
+        if(produto!=null)
+            return produto;
         else
-            this.quantidade=0;
+            return null;
+    }
+    
+    public int validarQuantidade(int quantidade){
+        if(quantidade>=0)
+            return quantidade;
+        else
+            return 0;
     }
 }

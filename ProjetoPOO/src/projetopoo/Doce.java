@@ -6,14 +6,22 @@ public class Doce extends Produto{
     
     public Doce(String nome, double preco, int iva, String descricao, boolean caseiro) {
         super(nome, preco, iva);
+        this.descricao=validarDescricao(descricao);
+        this.caseiro=validarCaseiro(caseiro);
+    }
+    
+    public String validarDescricao(String descricao){
         if(descricao!=null)
-            this.descricao=descricao;
+            return descricao;
         else
-            this.descricao="";
+            return "";
+    }
+    
+    public boolean validarCaseiro(boolean caseiro){
         if(caseiro==true||caseiro==false)
-            this.caseiro=caseiro;
+            return caseiro;
         else
-            this.caseiro=false;
+            return false;
     }
     
 }

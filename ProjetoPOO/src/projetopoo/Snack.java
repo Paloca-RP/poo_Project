@@ -16,4 +16,18 @@ public class Snack extends Produto{
             this.picante=false;
     }
     
+    public String validarQuantidade(String descricao){
+        if(descricao!=null)
+            return descricao;
+        else
+            return "";
+    }
+    
+    public boolean validarCaseiro(boolean caseiro){
+        if(caseiro==true||caseiro==false)
+            return caseiro;
+        else
+            return false;
+    }
+    
 }

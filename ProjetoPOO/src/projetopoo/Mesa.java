@@ -7,18 +7,30 @@ public class Mesa {
     private int pedidoAtual;
     
     public Mesa(int numero, boolean disponivel, int pedidoAtual){
+        this.numero=validarNumero(numero);
+        this.disponivel=validarDisponivel(disponivel);
+        this.pedidoAtual=validarPedidoAtual(pedidoAtual);
+    }
+    
+    public int validarNumero(int numero){
         if(numero>0)
-            this.numero=numero;
+            return numero;
         else
-            this.numero=0;
+            return 0;
+    }
+    
+    public boolean validarDisponivel(boolean disponivel){
         if(disponivel==true||disponivel==false)
-            this.disponivel=disponivel;
+            return disponivel;
         else
-            this.disponivel=true;
-        if(disponivel==false)
-            this.pedidoAtual=pedidoAtual;
+            return false;
+    }
+    
+    public int validarPedidoAtual(int pedidoAtual){
+        if(pedidoAtual>0)
+            return pedidoAtual;
         else
-            this.pedidoAtual=0;
+            return 0;
     }
     
 }
