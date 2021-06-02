@@ -4,7 +4,7 @@ public class Snack extends Produto{
     private Tamanho quantidade;
     private boolean picante;
     
-    public Snack(String nome, double preco, TaxaIva iva) {
+    public Snack(String nome, double preco, TaxaIva iva, Tamanho quantidade, boolean picante) {
         super(nome, preco, iva);
         this.quantidade=validarQuantidade(quantidade);
         this.picante=validarCaseiro(picante);
