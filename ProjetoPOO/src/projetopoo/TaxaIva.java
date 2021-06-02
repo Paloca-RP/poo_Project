@@ -1,15 +1,15 @@
 package projetopoo;
 
 public enum TaxaIva {
-    seis,treze,vinteTres;
+    SEIS,TREZE,VINTETRES;
 
-    public String toString(){
-        if(this==seis)
-            return "6";
-        if(this==treze)
-            return "13";
-        if(this==vinteTres)
-            return "23";
-        return "";
+    public int toInt(){
+        if(this==SEIS)
+            return 6;
+        if(this==TREZE)
+            return 13;
+        if(this==VINTETRES)
+            return 23;
+        return 0;
     }
 }

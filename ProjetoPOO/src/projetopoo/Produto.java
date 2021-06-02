@@ -6,7 +6,7 @@ public class Produto {
     protected double preco;
     protected int iva;
 
-    public Produto (String nome, double preco, int iva){
+    public Produto (String nome, double preco, TaxaIva iva){
         this.nome=validarNome(nome);
         this.preco=validarPreco(preco);
         this.iva=validarIva(iva);
@@ -26,11 +26,13 @@ public class Produto {
             return 0;
     }
     
-    public int validarIva(int iva){
-        if(iva==6||iva==13||iva==23)
-            return iva;
-        else
-            return 0;
+    public int validarIva(TaxaIva iva){
+        switch(iva){
+            case SEIS:return 6;
+            case TREZE:return 13;
+            case VINTETRES:return 23;
+            default:return 0;
+        }
     }
     
     public boolean verificarProduto(){

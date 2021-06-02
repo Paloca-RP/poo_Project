@@ -4,7 +4,7 @@ public class Bebida extends Produto{
     private Tamanho capacidade;
     private boolean alcoolica;
     
-    public Bebida(String nome, double preco, int iva, Tamanho capacidade, boolean alcoolica) {
+    public Bebida(String nome, double preco, TaxaIva iva, Tamanho capacidade, boolean alcoolica) {
         super(nome, preco, iva);
         this.capacidade=validarCapacidade(capacidade);
         this.alcoolica=validarAlcoolica(alcoolica);

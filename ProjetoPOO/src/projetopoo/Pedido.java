@@ -13,6 +13,6 @@ public class Pedido {
         this.items=new ArrayList<Item>();
         this.abertoHora=LocalDateTime.now();
         this.fechadoHora=null;
-        this.estado=Estado.Aberto;
+        this.estado=Estado.ABERTO;
     }
 }

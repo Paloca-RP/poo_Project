@@ -1,16 +1,16 @@
 package projetopoo;
 
 public enum Estado{
-    Aberto,Preparacao,Servido,Fechado;
+    ABERTO,PREPARACAO,SERVIDO,FECHADO;
 
     public String toString(){
-        if(this==Aberto)
+        if(this==ABERTO)
             return "Aberto";
-        if(this==Preparacao)
-            return "Preparacao";
-        if(this==Servido)
+        if(this==PREPARACAO)
+            return "Em preparação";
+        if(this==SERVIDO)
             return "Servido";
-        if(this==Fechado)
+        if(this==FECHADO)
             return "Fechado";
         return "";
     }

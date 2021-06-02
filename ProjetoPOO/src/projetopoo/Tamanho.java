@@ -1,14 +1,14 @@
 package projetopoo;
 
 public enum Tamanho{
-    Pequeno,Medio,Grande;
+    PEQUENO,MEDIO,GRANDE;
 
     public String toString(){
-        if(this==Pequeno)
+        if(this==PEQUENO)
             return "Pequeno";
-        if(this==Medio)
+        if(this==MEDIO)
             return "Médio";
-        if(this==Grande)
+        if(this==GRANDE)
             return "Grande";
         return "";
     }
