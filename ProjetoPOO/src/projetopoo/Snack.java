@@ -6,19 +6,13 @@ public class Snack extends Produto{
     
     public Snack(String nome, double preco, int iva) {
         super(nome, preco, iva);
-        if(quantidade=="Pequeno"||quantidade=="Médio"||quantidade=="Grande")
-            this.quantidade=quantidade;
-        else
-            this.quantidade="Indefinido";
-        if(picante==true||picante==false)
-            this.picante=picante;
-        else
-            this.picante=false;
+        this.quantidade=validarQuantidade(quantidade);
+        this.picante=validarCaseiro(picante);
     }
     
-    public String validarQuantidade(String descricao){
-        if(descricao!=null)
-            return descricao;
+    public String validarQuantidade(String quantidade){
+        if(quantidade!=null)
+            return quantidade;
         else
             return "";
     }

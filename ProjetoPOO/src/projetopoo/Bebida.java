@@ -1,21 +1,21 @@
 package projetopoo;
 
 public class Bebida extends Produto{
-    private String capacidade;
+    private Tamanho capacidade;
     private boolean alcoolica;
     
-    public Bebida(String nome, double preco, int iva, String capacidade, boolean alcoolica) {
+    public Bebida(String nome, double preco, int iva, Tamanho capacidade, boolean alcoolica) {
         super(nome, preco, iva);
         this.capacidade=validarCapacidade(capacidade);
         this.alcoolica=validarAlcoolica(alcoolica);
         
     }
     
-    public String validarCapacidade(String capacidade){
-        if(capacidade=="Pequeno"||capacidade=="Médio"||capacidade=="Grande")
+    public Tamanho validarCapacidade(Tamanho capacidade){
+        if(capacidade!=null)
             return capacidade;
         else
-            return "";
+            return null;
     }
     
     public boolean validarAlcoolica(boolean alcoolica){
@@ -23,6 +23,10 @@ public class Bebida extends Produto{
             return alcoolica;
         else
             return false;
+    }
+    
+    public String toString(){
+        return "Bebida: " + this.nome + "\nCapacidade: " + this.capacidade + "\nPreço: " + this.preco + "\nIVA: " + this.iva + "%\nAlcoolica: " + this.alcoolica + "\n";
     }
     
 }

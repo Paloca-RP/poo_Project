@@ -2,9 +2,9 @@ package projetopoo;
 
 public class Produto {
     
-    private String nome;
-    private double preco;
-    private int iva;
+    protected String nome;
+    protected double preco;
+    protected int iva;
 
     public Produto (String nome, double preco, int iva){
         this.nome=validarNome(nome);
@@ -31,5 +31,9 @@ public class Produto {
             return iva;
         else
             return 0;
+    }
+    
+    public boolean verificarProduto(){
+        return true;
     }
 }

@@ -1,15 +1,18 @@
 package projetopoo;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Pedido {
     private ArrayList <Item> items;
-    private LocalDate aberto;
-    private LocalDate fechado;
+    private LocalDateTime abertoHora;
+    private LocalDateTime fechadoHora;
     private Estado estado;
             
     public Pedido(){
-        items=new ArrayList<Item>();
+        this.items=new ArrayList<Item>();
+        this.abertoHora=LocalDateTime.now();
+        this.fechadoHora=null;
+        this.estado=Estado.Aberto;
     }
 }
