@@ -6,7 +6,7 @@ public class Produto {
     protected double preco;
     protected int iva;
 
-    public Produto (String nome, double preco, TaxaIva iva){
+    public Produto(String nome, double preco, TaxaIva iva){
         this.nome=validarNome(nome);
         this.preco=validarPreco(preco);
         this.iva=validarIva(iva);
@@ -37,5 +37,29 @@ public class Produto {
     
     public boolean verificarProduto(){
         return true;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome=validarNome(nome);
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco=validarPreco(preco);
+    }
+
+    public int getIva() {
+        return iva;
+    }
+
+    public void setIva(TaxaIva iva) {
+        this.iva=validarIva(iva);
     }
 }

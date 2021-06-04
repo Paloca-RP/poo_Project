@@ -1,14 +1,14 @@
 package projetopoo;
 
-public class ProjetoPOO {
+public class GestaoRestaurante {
     
     public static void main(String[] args) {
         //BEBIDAS
         Bebida Imperial=new Bebida("Imperial",1.40,TaxaIva.VINTETRES,Tamanho.GRANDE,true);
         Bebida Refrigerante=new Bebida("Refrigerante",1.40,TaxaIva.VINTETRES,Tamanho.MEDIO,false);
-        Bebida AguaPeq=new Bebida("Água",0.80,TaxaIva.SEIS,Tamanho.PEQUENO,false);
-        Bebida AguaMed=new Bebida("Água",1,TaxaIva.SEIS,Tamanho.MEDIO,false);
-        Bebida AguaGran=new Bebida("Água",1.10,TaxaIva.SEIS,Tamanho.GRANDE,false);
+        Bebida AguaPeq=new Bebida("Água Pequena",0.80,TaxaIva.SEIS,Tamanho.PEQUENO,false);
+        Bebida AguaMed=new Bebida("Água Média",1,TaxaIva.SEIS,Tamanho.MEDIO,false);
+        Bebida AguaGra=new Bebida("Água Grande",1.10,TaxaIva.SEIS,Tamanho.GRANDE,false);
         
         //DOCES
         Doce Mousse=new Doce("Mousse",1.50,TaxaIva.VINTETRES,"Mousse de Chocolate",true);
@@ -29,10 +29,18 @@ public class ProjetoPOO {
         
         //SNACKS
         Snack BatataFritaPeq=new Snack("Batatas Fritas Pequena",1.2,TaxaIva.VINTETRES,Tamanho.PEQUENO,false);
+        Snack BatataFritaMed=new Snack("Batatas Fritas Média",1.2,TaxaIva.VINTETRES,Tamanho.PEQUENO,false);
+        Snack BatataFritaGra=new Snack("Batatas Fritas Grande",1.2,TaxaIva.VINTETRES,Tamanho.PEQUENO,false);
+        
+        //MENU
+        
+        
         
         System.out.println(Imperial.toString());
-        System.out.println(Cola.toString());
-        System.out.println(Agua.toString());
+        System.out.println(Refrigerante.toString());
+        System.out.println(AguaMed.toString());
+        
+        
     }
     
 }
