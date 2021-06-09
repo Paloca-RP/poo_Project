@@ -1,5 +1,6 @@
 package projetopoo;
 
+import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -140,6 +141,7 @@ public class Restaurante {
                 if(mesas[i].verDisponivel()==false){
                     if(mesas[i].getPedidoAtual().getEstado()==Estado.SERVIDO||mesas[i].getPedidoAtual().getEstado()==Estado.ABERTO){
                         mesas[i].getPedidoAtual().setEstado(Estado.FECHADO);
+                        mesas[i].setDisponivel(true);
                         return "O estado do pedido foi alterado para " + mesas[i].getPedidoAtual().getEstado() + "!\n";
                     }
                     else if(mesas[i].getPedidoAtual().getEstado()==Estado.PREPARACAO)
@@ -157,28 +159,31 @@ public class Restaurante {
         String output = "";
         float total=0;
         int produtosAdicionados=0;
-        output += "------------------Recibo------------------\n";
-        output += "Kebabs do Norte\n";
-        output += "------------------------------------------\n";
+        DecimalFormat duasCasas = new DecimalFormat("0.00");
         for(int i=0;i<mesas.length;i++){
             if(mesas[i].getNumero()==numMesa){
+                output += "------------------Recibo------------------\n";
+                output += "Kebabs do Norte\n";
+                output += "------------------------------------------\n";
                 for(int j=0;j<mesas[i].getPedidoAtual().getProdutos().size();j++){
                     output += "Produto: " + mesas[i].getPedidoAtual().getProdutos().get(j).getNome();
                     output += "   Quantidade: 1\n";
                     output += "IVA: " + mesas[i].getPedidoAtual().getProdutos().get(j).getIva() * 100 + "%";
-                    output += "   s/IVA: " + (mesas[i].getPedidoAtual().getProdutos().get(j).getPreco() - mesas[i].getPedidoAtual().getProdutos().get(j).getPreco() * mesas[i].getPedidoAtual().getProdutos().get(j).getIva()) + "€";
-                    output += "   c/IVA: " + mesas[i].getPedidoAtual().getProdutos().get(j).getPreco() + "€";
+                    output += "   s/IVA: " + duasCasas.format(mesas[i].getPedidoAtual().getProdutos().get(j).getPreco() - mesas[i].getPedidoAtual().getProdutos().get(j).getPreco() * mesas[i].getPedidoAtual().getProdutos().get(j).getIva()) + "€";
+                    output += "   c/IVA: " + duasCasas.format(mesas[i].getPedidoAtual().getProdutos().get(j).getPreco()) + "€";
                     output += "\n";
                     total += mesas[i].getPedidoAtual().getProdutos().get(j).getPreco();
-                    
                     produtosAdicionados++;
                 }
-                
+                if(produtosAdicionados==0)
+                    output += "Nenhum produto consumido\n";
+                output += "------------------------------------------\n";
+                output += "Valor final: " + duasCasas.format(total) + "€\n";
+                output += "------------------------------------------\n";
+                return output;
             }
         }
-        output += "------------------------------------------\n";
-        output += "Valor final: " + total + "€\n";
-        output += "------------------------------------------\n";
+        output += "Não foi possivel encontrar a mesa " + numMesa + ".\n";
         return output;
     }
     
