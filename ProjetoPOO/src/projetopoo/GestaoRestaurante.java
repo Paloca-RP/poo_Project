@@ -1,8 +1,12 @@
 package projetopoo;
 
+import java.util.Scanner;
+
 public class GestaoRestaurante {
     
     public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        
         //BEBIDAS
         Bebida Imperial=new Bebida("Imperial",1.40,TaxaIva.VINTETRES,Tamanho.GRANDE,true);
         Bebida Refrigerante=new Bebida("Refrigerante",1.40,TaxaIva.VINTETRES,Tamanho.MEDIO,false);
@@ -32,13 +36,16 @@ public class GestaoRestaurante {
         Snack BatataFritaMed=new Snack("Batatas Fritas Média",1.2,TaxaIva.VINTETRES,Tamanho.PEQUENO,false);
         Snack BatataFritaGra=new Snack("Batatas Fritas Grande",1.2,TaxaIva.VINTETRES,Tamanho.PEQUENO,false);
         
+        //MESAS
+
+        
         //MENU
-        
-        
-        
-        System.out.println(Imperial.toString());
-        System.out.println(Refrigerante.toString());
-        System.out.println(AguaMed.toString());
+        System.out.println("Insira o numero de mesas do restaurante(Min 4)-> ");
+        int numMesas=scanner.nextInt();
+        Restaurante restaurante=new Restaurante(numMesas);
+        restaurante.prepararRestaurante();
+        System.out.println(restaurante.solicitarMesa());
+        System.out.println(restaurante.solicitarMesa());
         
         
     }

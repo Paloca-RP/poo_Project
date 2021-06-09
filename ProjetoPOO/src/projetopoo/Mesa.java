@@ -4,12 +4,12 @@ public class Mesa {
     
     private int numero;
     private boolean disponivel;
-    private int pedidoAtual;
+    private Pedido pedidoAtual;
     
-    public Mesa(int numero, boolean disponivel, int pedidoAtual){
+    public Mesa(int numero){
         this.numero=validarNumero(numero);
-        this.disponivel=validarDisponivel(disponivel);
-        this.pedidoAtual=validarPedidoAtual(pedidoAtual);
+        this.disponivel=true;
+        this.pedidoAtual=new Pedido();
     }
     
     public int validarNumero(int numero){
@@ -26,11 +26,40 @@ public class Mesa {
             return false;
     }
     
-    public int validarPedidoAtual(int pedidoAtual){
-        if(pedidoAtual>0)
+    public Pedido validarPedidoAtual(Pedido pedidoAtual){
+        if(pedidoAtual!=null)
             return pedidoAtual;
         else
-            return 0;
+            return null;
     }
+
+    public int getNumero(){
+        return numero;
+    }
+
+    public void setNumero(int numero){
+        this.numero=validarNumero(numero);
+    }
+
+    public boolean verDisponivel(){
+        return disponivel;
+    }
+
+    public void setDisponivel(boolean disponivel){
+        this.disponivel=validarDisponivel(disponivel);
+    }
+
+    public Pedido getPedidoAtual(){
+        return pedidoAtual;
+    }
+
+    public void setPedidoAtual(Pedido pedidoAtual){
+        this.pedidoAtual=validarPedidoAtual(pedidoAtual);
+    }
+    
+    public String toString(){
+        return "Mesa: " + this.numero + "\nDisponivel: " + this.disponivel + "\nPedido Atual:\n" + this.pedidoAtual.toString() + "\n";
+    }
+    
     
 }
