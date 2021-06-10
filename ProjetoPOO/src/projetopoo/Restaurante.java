@@ -52,7 +52,7 @@ public class Restaurante {
         produtos.add(new Snack("Batatas Fritas Grande",1.2,TaxaIva.VINTETRES,Tamanho.PEQUENO,false));
     }
     
-    public void registarProduto(){
+    public String registarProduto(){
         int tipoProduto=0;
         int escolhaIva=0;
         int escolhaTamanho=0;
@@ -60,6 +60,7 @@ public class Restaurante {
         Tamanho tamanhoBebida=null;
         Tamanho quantidadeSnack=null;
         Scanner scanner=new Scanner(System.in);
+        System.out.println("----------Registar Produto----------");
         //ESCOLHER TIPO DE PRODUTO
         do{
             System.out.println("------Tipo de Produto------");
@@ -72,13 +73,10 @@ public class Restaurante {
             System.out.println("Insira o tipo de Produto-> ");
             tipoProduto=scanner.nextInt();
             scanner.nextLine();
-            if(tipoProduto<0||tipoProduto>4){
+            if(tipoProduto<0||tipoProduto>4)
                 System.out.println("Insira uma opção válida!\n");
-            }
-            if(tipoProduto==0){
-                System.out.println("Operação cancelada");
-                return;
-            }
+            if(tipoProduto==0)
+                return "Operação cancelada";
         }while(tipoProduto<0||tipoProduto>4);
         //NOME DO PRODUTO
         System.out.println("Insira o nome do Produto-> ");
@@ -86,10 +84,8 @@ public class Restaurante {
         scanner.nextLine();
         //VERIFICAR SE EXISTE
         for(int i=0;i<produtos.size();i++){
-            if(produtos.get(i).getNome()==nomeProduto){
-                System.out.println("O produto " + nomeProduto + " já está inserido.\n");
-                return;
-            }
+            if(produtos.get(i).getNome()==nomeProduto)
+                return "O produto " + nomeProduto + " já está inserido.\n";
         }
         //PREÇO DO PRODUTO
         System.out.println("Insira o preço do Produto-> ");
@@ -132,9 +128,9 @@ public class Restaurante {
                     }
                 }while(escolhaTamanho!=1&&escolhaTamanho!=2&&escolhaTamanho!=3);
                 switch(escolhaTamanho){
-                    case 6:tamanhoBebida=Tamanho.PEQUENO;break;
-                    case 13:tamanhoBebida=Tamanho.MEDIO;break;
-                    case 23:tamanhoBebida=Tamanho.GRANDE;break;
+                    case 1:tamanhoBebida=Tamanho.PEQUENO;break;
+                    case 2:tamanhoBebida=Tamanho.MEDIO;break;
+                    case 3:tamanhoBebida=Tamanho.GRANDE;break;
                 }
                 //ALCOOLICA
                 System.out.println("A Bebida é alcoólica?(true/false)-> ");
@@ -182,9 +178,9 @@ public class Restaurante {
                     }
                 }while(escolhaTamanho!=1&&escolhaTamanho!=2&&escolhaTamanho!=3);
                 switch(escolhaTamanho){
-                    case 6:quantidadeSnack=Tamanho.PEQUENO;break;
-                    case 13:quantidadeSnack=Tamanho.MEDIO;break;
-                    case 23:quantidadeSnack=Tamanho.GRANDE;break;
+                    case 1:quantidadeSnack=Tamanho.PEQUENO;break;
+                    case 2:quantidadeSnack=Tamanho.MEDIO;break;
+                    case 3:quantidadeSnack=Tamanho.GRANDE;break;
                 }
                 //PICANTE
                 System.out.println("O Snack é picante?(true/false)-> ");
@@ -195,7 +191,7 @@ public class Restaurante {
                 break;
             }
         }   
-        System.out.println("O produto " + nomeProduto + " foi adicionado.\n");
+        return "O produto " + nomeProduto + " foi adicionado.\n";
     }
     
     public String solicitarMesa(){
@@ -216,6 +212,7 @@ public class Restaurante {
             return "Não existe nenhuma mesa livre.\n";
         System.out.println("Insira o numero da mesa pretendida-> ");
         int opcaoMesa=scanner.nextInt();
+        scanner.nextLine();
         for(int i=0;i<mesasLivres.size();i++){
             if(opcaoMesa==mesasLivres.get(i)){
                 mesas[opcaoMesa-1].getPedidoAtual().setAbertoHora(LocalDateTime.now());
@@ -227,8 +224,15 @@ public class Restaurante {
         return "Não inseriu uma mesa livre.\n";
     }
     
-    public String adicionarItemPedido(int numMesa,String nomeProduto){
+    public String adicionarItemPedido(){
+        Scanner scanner=new Scanner(System.in);
         System.out.println("----------Adicionar Item----------");
+        System.out.println("Insira o numero da mesa-> ");
+        int numMesa=scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Insira o nome do produto-> ");
+        String nomeProduto=scanner.nextLine();
+        scanner.nextLine();
         for(int i=0;i<mesas.length;i++){
             if(mesas[i].getNumero()==numMesa){
                 if(mesas[i].verDisponivel()==false){
@@ -248,7 +252,11 @@ public class Restaurante {
         return "Não foi possivel encontrar a mesa " + numMesa + ".\n";
     }
     
-    public String servirPedido(int numMesa){
+    public String servirPedido(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Insira o numero da mesa-> ");
+        int numMesa=scanner.nextInt();
+        scanner.nextLine();
         for(int i=0;i<mesas.length;i++){
             if(mesas[i].getNumero()==numMesa){
                 if(mesas[i].verDisponivel()==false){
@@ -267,14 +275,18 @@ public class Restaurante {
         return "Não foi possivel encontrar a mesa " + numMesa + ".\n";
     }
     
-    public String fecharPedido(int numMesa){
+    public String fecharPedido(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Insira o numero da mesa-> ");
+        int numMesa=scanner.nextInt();
+        scanner.nextLine();
         for(int i=0;i<mesas.length;i++){
             if(mesas[i].getNumero()==numMesa){
                 if(mesas[i].verDisponivel()==false){
                     if(mesas[i].getPedidoAtual().getEstado()==Estado.SERVIDO||mesas[i].getPedidoAtual().getEstado()==Estado.ABERTO){
                         mesas[i].getPedidoAtual().setEstado(Estado.FECHADO);
                         mesas[i].setDisponivel(true);
-                        return "O estado do pedido foi alterado para " + mesas[i].getPedidoAtual().getEstado() + "!\n";
+                        return "O estado do pedido foi alterado para " + mesas[i].getPedidoAtual().getEstado() + "!\n" + apresentarRecibo(numMesa);
                     }
                     else if(mesas[i].getPedidoAtual().getEstado()==Estado.PREPARACAO)
                         return "O pedido tem produtos em preparação.\n";
@@ -329,9 +341,18 @@ public class Restaurante {
     
     public String toStringMesas(){
         String output = "";
-        output += "Mesas:\n";
+        output += "----------Lista de Mesas----------\n";
         for(int i=0;i<mesas.length;i++){
             output += mesas[i].toString();
+        }        
+        return output;
+    }
+    
+    public String toStringProdutos(){
+        String output = "";
+        output += "--------Lista de Produtos---------\n";
+        for(int i=0;i<produtos.size();i++){
+            output += produtos.get(i).toString();
         }        
         return output;
     }

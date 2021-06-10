@@ -16,39 +16,31 @@ public class GestaoRestaurante {
         do{
             System.out.println("-------------------Menu-------------------");
             System.out.println("1 - Criar Produto");
-            System.out.println("2 - Solicitar Mesa");
-            System.out.println("3 - Adicionar Items a Pedido");
-            System.out.println("4 - Atualizar Pedido para Servido");
-            System.out.println("5 - Fechar Pedido/Apresentar Recibo");
-            System.out.println("6 - Consultar Histórico de Pedidos");
-            System.out.println("7 - Exportar Histórico de Pedidos");
+            System.out.println("2 - Ver Lista de Produtos");
+            System.out.println("3 - Solicitar Mesa");
+            System.out.println("4 - Ver Lista de Mesas");
+            System.out.println("5 - Adicionar Items a Pedido");
+            System.out.println("6 - Atualizar Pedido para Servido");
+            System.out.println("7 - Fechar Pedido/Apresentar Recibo");
+            System.out.println("8 - Consultar Histórico de Pedidos");
+            System.out.println("9 - Exportar Histórico de Pedidos");
             System.out.println("0-Sair");
             System.out.println("------------------------------------------");
-            System.out.println("Insira o numero de mesas do restaurante(Min 4)-> ");
+            System.out.println("Insira a sua opção-> ");
             opcao=scanner.nextInt();
             switch(opcao){
                 case 1:restaurante.registarProduto();break;
-                case 2:restaurante.solicitarMesa();break;
-                case 3:restaurante.adicionarItemPedido();break;
-                case 4:break;
-                case 5:break;
-                case 6:break;
-                case 7:break;
-                case 0:break;
-                
+                case 2:System.out.println(restaurante.toStringProdutos());break;
+                case 3:System.out.println(restaurante.solicitarMesa());break;
+                case 4:System.out.println(restaurante.toStringMesas());break;
+                case 5:System.out.println(restaurante.adicionarItemPedido());break;
+                case 6:System.out.println(restaurante.servirPedido());break;
+                case 7:System.out.println(restaurante.fecharPedido());break;
+                case 8:break;
+                case 9:break;
+                case 0:System.out.println("Vai sair!");break;
             }
-            
-            
-            
         }while(opcao!=0);
-        System.out.println(restaurante.solicitarMesa());
-        System.out.println(restaurante.adicionarItemPedido(1,"Kebab Prato"));
-        System.out.println(restaurante.adicionarItemPedido(1,"Kebab Prato"));
-        System.out.println(restaurante.adicionarItemPedido(1,"Imperial"));
-        System.out.println(restaurante.servirPedido(1));
-        System.out.println(restaurante.fecharPedido(1));
-        System.out.println(restaurante.apresentarRecibo(1));
-        System.out.println(restaurante.solicitarMesa());
     }
     
 }

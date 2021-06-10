@@ -62,4 +62,8 @@ public class Produto {
     public void setIva(TaxaIva iva) {
         this.iva=validarIva(iva);
     }
+    
+    public String toString(){
+        return "Produto: " + this.nome + "\nPreço: " + this.preco + "€\nTaxa de IVA:\n" + this.iva+ "%\n\n";
+    }
 }

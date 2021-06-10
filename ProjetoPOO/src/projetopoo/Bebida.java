@@ -23,10 +23,5 @@ public class Bebida extends Produto{
             return alcoolica;
         else
             return false;
-    }
-    
-    public String toString(){
-        return "Bebida: " + this.nome + "\nTamanho: " + this.tamanho + "\nPreço: " + this.preco + "€\nIVA: " + this.iva + "%\nAlcoolica: " + this.alcoolica + "\n";
-    }
-    
+    }    
 }
