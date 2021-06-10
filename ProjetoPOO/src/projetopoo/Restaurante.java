@@ -21,7 +21,6 @@ public class Restaurante {
     public void prepararRestaurante(){
         for(int i=0;i<mesas.length;i++){
             mesas[i]=new Mesa(i+1);
-            System.out.println(mesas[i].toString());
         }
         //BEBIDAS
         produtos.add(new Bebida("Imperial",1.40,TaxaIva.VINTETRES,Tamanho.GRANDE,true));
@@ -53,17 +52,150 @@ public class Restaurante {
         produtos.add(new Snack("Batatas Fritas Grande",1.2,TaxaIva.VINTETRES,Tamanho.PEQUENO,false));
     }
     
-    public void registarProduto(Produto novoProduto){
-        int inserido=0;
+    public void registarProduto(){
+        int tipoProduto=0;
+        int escolhaIva=0;
+        int escolhaTamanho=0;
+        TaxaIva taxaProduto=null;
+        Tamanho tamanhoBebida=null;
+        Tamanho quantidadeSnack=null;
+        Scanner scanner=new Scanner(System.in);
+        //ESCOLHER TIPO DE PRODUTO
+        do{
+            System.out.println("------Tipo de Produto------");
+            System.out.println("1 - Bebida");
+            System.out.println("2 - Doce");
+            System.out.println("3 - Prato");
+            System.out.println("4 - Snack");
+            System.out.println("0 - Cancelar");
+            System.out.println("---------------------------");
+            System.out.println("Insira o tipo de Produto-> ");
+            tipoProduto=scanner.nextInt();
+            scanner.nextLine();
+            if(tipoProduto<0||tipoProduto>4){
+                System.out.println("Insira uma opção válida!\n");
+            }
+            if(tipoProduto==0){
+                System.out.println("Operação cancelada");
+                return;
+            }
+        }while(tipoProduto<0||tipoProduto>4);
+        //NOME DO PRODUTO
+        System.out.println("Insira o nome do Produto-> ");
+        String nomeProduto=scanner.nextLine();
+        scanner.nextLine();
+        //VERIFICAR SE EXISTE
         for(int i=0;i<produtos.size();i++){
-            if(produtos.get(i).getNome()==novoProduto.getNome())
-                inserido++;
+            if(produtos.get(i).getNome()==nomeProduto){
+                System.out.println("O produto " + nomeProduto + " já está inserido.\n");
+                return;
+            }
         }
-        if(inserido==0){
-            produtos.add(novoProduto);
-            System.out.println("O produto " + novoProduto.getNome() + " foi adicionado.\n");
-        }else
-            System.out.println("O produto " + novoProduto.getNome() + " já está inserido.\n");
+        //PREÇO DO PRODUTO
+        System.out.println("Insira o preço do Produto-> ");
+        double precoProduto=scanner.nextDouble();
+        scanner.nextLine();
+        //TAXA DE IVA DO PRODUTO
+        do{
+            System.out.println("------Taxa de IVA------");
+            System.out.println("6%");
+            System.out.println("13%");
+            System.out.println("23%");
+            System.out.println("---------------------------");
+            System.out.println("Insira a taxa de iva do Produto-> ");
+            escolhaIva=scanner.nextInt();
+            scanner.nextLine();
+            if(escolhaIva!=6&&escolhaIva!=13&&escolhaIva!=23){
+                System.out.println("Insira uma opção válida!\n");
+            }
+        }while(escolhaIva!=6&&escolhaIva!=13&&escolhaIva!=23);
+        switch(escolhaIva){
+            case 6:taxaProduto=TaxaIva.SEIS;break;
+            case 13:taxaProduto=TaxaIva.TREZE;break;
+            case 23:taxaProduto=TaxaIva.VINTETRES;break;
+        }
+        //PEDIDOS ESPECIAIS PARA CADA TIPO DE PRODUTO
+        switch(tipoProduto){
+            case 1:{//BEBIDA
+                //TAMANHO
+                do{
+                    System.out.println("----------Tamanho----------");
+                    System.out.println("1 - Pequeno");
+                    System.out.println("2 - Médio");
+                    System.out.println("3 - Grande");
+                    System.out.println("---------------------------");
+                    System.out.println("Insira o tamanho da Bebida-> ");
+                    escolhaTamanho=scanner.nextInt();
+                    scanner.nextLine();
+                    if(escolhaTamanho!=1&&escolhaTamanho!=2&&escolhaTamanho!=3){
+                        System.out.println("Insira uma opção válida!\n");
+                    }
+                }while(escolhaTamanho!=1&&escolhaTamanho!=2&&escolhaTamanho!=3);
+                switch(escolhaTamanho){
+                    case 6:tamanhoBebida=Tamanho.PEQUENO;break;
+                    case 13:tamanhoBebida=Tamanho.MEDIO;break;
+                    case 23:tamanhoBebida=Tamanho.GRANDE;break;
+                }
+                //ALCOOLICA
+                System.out.println("A Bebida é alcoólica?(true/false)-> ");
+                boolean alcoolicaBebida=scanner.hasNextBoolean();
+                scanner.nextLine();
+                //ADICIONA BEBIDA
+                produtos.add(new Bebida(nomeProduto,precoProduto,taxaProduto,tamanhoBebida,alcoolicaBebida));
+                break;
+            }
+            case 2:{//DOCE
+                //DESCRIÇÃO
+                System.out.println("Insira a descrição do Doce-> ");
+                String descricaoDoce=scanner.nextLine();
+                scanner.nextLine();
+                //CASEIRO
+                System.out.println("A Sobremesa é caseira?(true/false)-> ");
+                boolean caseiraDoce=scanner.hasNextBoolean();
+                scanner.nextLine();
+                //ADICIONAR DOCE
+                produtos.add(new Doce(nomeProduto,precoProduto,taxaProduto,descricaoDoce,caseiraDoce));
+                break;
+            }
+            case 3:{//PRATO
+                //DESCRIÇÃO
+                System.out.println("Insira a descrição do Prato-> ");
+                String descricaoPrato=scanner.nextLine();
+                scanner.nextLine();
+                //ADICIONAR PRATO
+                produtos.add(new Prato(nomeProduto,precoProduto,taxaProduto,descricaoPrato));
+                break;
+            }
+            case 4:{//SNACK
+                //TAMANHO
+                do{
+                    System.out.println("----------Tamanho----------");
+                    System.out.println("1 - Pequeno");
+                    System.out.println("2 - Médio");
+                    System.out.println("3 - Grande");
+                    System.out.println("---------------------------");
+                    System.out.println("Insira o tamanho do Snack-> ");
+                    escolhaTamanho=scanner.nextInt();
+                    scanner.nextLine();
+                    if(escolhaTamanho!=1&&escolhaTamanho!=2&&escolhaTamanho!=3){
+                        System.out.println("Insira uma opção válida!\n");
+                    }
+                }while(escolhaTamanho!=1&&escolhaTamanho!=2&&escolhaTamanho!=3);
+                switch(escolhaTamanho){
+                    case 6:quantidadeSnack=Tamanho.PEQUENO;break;
+                    case 13:quantidadeSnack=Tamanho.MEDIO;break;
+                    case 23:quantidadeSnack=Tamanho.GRANDE;break;
+                }
+                //PICANTE
+                System.out.println("O Snack é picante?(true/false)-> ");
+                boolean picanteSnack=scanner.hasNextBoolean();
+                scanner.nextLine();
+                //ADICIONAR SNACK
+                produtos.add(new Snack(nomeProduto,precoProduto,taxaProduto,quantidadeSnack,picanteSnack));
+                break;
+            }
+        }   
+        System.out.println("O produto " + nomeProduto + " foi adicionado.\n");
     }
     
     public String solicitarMesa(){
