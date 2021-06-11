@@ -1,9 +1,10 @@
 package projetopoo;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Pedido {
+public class Pedido implements Serializable{
     private ArrayList <Produto> produtos;
     private LocalDateTime abertoHora;
     private LocalDateTime fechadoHora;
@@ -22,6 +23,10 @@ public class Pedido {
 
     public ArrayList<Produto> getProdutos(){
         return produtos;
+    }
+    
+    public void limparProdutos(){
+        this.produtos.clear();
     }
 
     public LocalDateTime getAbertoHora(){
@@ -56,7 +61,5 @@ public class Pedido {
         }
         output += "Fechado: " + this.fechadoHora + "\n";
         return output;
-    }
-    
-    
+    }    
 }

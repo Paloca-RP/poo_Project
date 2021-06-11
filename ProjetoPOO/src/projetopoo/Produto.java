@@ -64,6 +64,6 @@ public class Produto {
     }
     
     public String toString(){
-        return "Produto: " + this.nome + "\nPreço: " + this.preco + "€\nTaxa de IVA:\n" + this.iva+ "%\n\n";
+        return "Produto: " + this.nome + "\nPreço: " + this.preco + "€\nTaxa de IVA: " + this.iva+ "%\n\n";
     }
 }
