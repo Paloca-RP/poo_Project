@@ -4,7 +4,7 @@ public class Produto {
     
     protected String nome;
     protected double preco;
-    protected int iva;
+    protected double iva;
 
     public Produto(String nome, double preco, TaxaIva iva){
         this.nome=validarNome(nome);
@@ -26,11 +26,11 @@ public class Produto {
             return 0;
     }
     
-    public int validarIva(TaxaIva iva){
+    public double validarIva(TaxaIva iva){
         switch(iva){
-            case SEIS:return 6;
-            case TREZE:return 13;
-            case VINTETRES:return 23;
+            case SEIS:return 0.06;
+            case TREZE:return 0.13;
+            case VINTETRES:return 0.23;
             default:return 0;
         }
     }
@@ -55,11 +55,15 @@ public class Produto {
         this.preco=validarPreco(preco);
     }
 
-    public int getIva() {
+    public double getIva() {
         return iva;
     }
 
     public void setIva(TaxaIva iva) {
         this.iva=validarIva(iva);
+    }
+    
+    public String toString(){
+        return "Produto: " + this.nome + "\nPreço: " + this.preco + "€\nTaxa de IVA: " + this.iva+ "%\n\n";
     }
 }
