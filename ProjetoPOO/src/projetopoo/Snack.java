@@ -23,5 +23,4 @@ public class Snack extends Produto{
         else
             return false;
     }
-    
 }

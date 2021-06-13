@@ -23,5 +23,4 @@ public class Doce extends Produto{
         else
             return false;
     }
-    
 }

@@ -32,5 +32,4 @@ public class GestaoRestaurante {
             }
         }while(opcao!=0);
     }
-    
 }

@@ -60,6 +60,4 @@ public class Mesa {
     public String toString(){
         return "Mesa: " + this.numero + "\nDisponivel: " + this.disponivel + "\nPedido Atual:\n" + this.pedidoAtual.toString() + "\n";
     }
-    
-    
 }

@@ -420,12 +420,12 @@ public class Restaurante{
     
     public String toStringMesas(){
         try{
-        String output = "";
-        output += "\n\n----------Lista de Mesas----------\n";
-        for(int i=0;i<mesas.length;i++){
-            output += mesas[i].toString();
-        }        
-        return output;
+            String output = "";
+            output += "\n\n----------Lista de Mesas----------\n";
+            for(int i=0;i<mesas.length;i++){
+                output += mesas[i].toString();
+            }        
+            return output;
         }catch(Exception e){
             System.out.println("Ocorreu um erro.\n");
         }
@@ -434,12 +434,12 @@ public class Restaurante{
     
     public String toStringProdutos(){
         try{
-        String output = "";
-        output += "\n\n--------Lista de Produtos---------\n";
-        for(int i=0;i<produtos.size();i++){
-            output += produtos.get(i).toString();
-        }        
-        return output;
+            String output = "";
+            output += "\n\n--------Lista de Produtos---------\n";
+            for(int i=0;i<produtos.size();i++){
+                output += produtos.get(i).toString();
+            }        
+            return output;
         }catch(Exception e){
             System.out.println("Ocorreu um erro.\n");
         }
@@ -448,18 +448,15 @@ public class Restaurante{
     
     public String toStringHistoricoPedidos(){
         try{
-        String output = "";
-        output += "\n\n---------Lista de Pedidos---------\n";
-        for(int i=0;i<historicoPedidos.size();i++){
-            output += historicoPedidos.get(i).toString();
-        }
-        return output;
+            String output = "";
+            output += "\n\n---------Lista de Pedidos---------\n";
+            for(int i=0;i<historicoPedidos.size();i++){
+                output += historicoPedidos.get(i).toString();
+            }
+            return output;
         }catch(Exception e){
             System.out.println("Ocorreu um erro.\n");
         }
         return null;
     }
-    
-    
-    
 }

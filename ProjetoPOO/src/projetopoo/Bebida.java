@@ -7,8 +7,7 @@ public class Bebida extends Produto{
     public Bebida(String nome, double preco, TaxaIva iva, Tamanho tamanho, boolean alcoolica) {
         super(nome, preco, iva);
         this.tamanho=validarTamanho(tamanho);
-        this.alcoolica=validarAlcoolica(alcoolica);
-        
+        this.alcoolica=validarAlcoolica(alcoolica);        
     }
     
     public Tamanho validarTamanho(Tamanho tamanho){
