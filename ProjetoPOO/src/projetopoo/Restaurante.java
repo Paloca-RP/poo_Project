@@ -345,7 +345,7 @@ public class Restaurante{
                             mesas[i].getPedidoAtual().setEstado(Estado.FECHADO);
                             mesas[i].getPedidoAtual().setFechadoHora(LocalDateTime.now());
                             String output = "\nO estado do pedido foi alterado para " + mesas[i].getPedidoAtual().getEstado() + "!\n" + apresentarRecibo(numMesa);
-                            historicoPedidos.add(mesas[i].getPedidoAtual().toString());
+                            historicoPedidos.add(0,mesas[i].getPedidoAtual().toString());
                             mesas[i].setDisponivel(true);
                             mesas[i].getPedidoAtual().setEstado(null);
                             mesas[i].getPedidoAtual().setFechadoHora(null);
