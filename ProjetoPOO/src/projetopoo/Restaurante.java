@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Restaurante{
@@ -116,8 +117,17 @@ public class Restaurante{
                     return "O produto " + nomeProduto + " já está inserido.\n";
             }
             //PREÇO DO PRODUTO
-            System.out.println("Insira o preço do Produto-> ");
-            double precoProduto=scanner.nextDouble();
+            double precoProduto=0;
+            try{
+                System.out.println("Insira o preço do Produto(xx,xx)-> ");
+                precoProduto=scanner.nextDouble();
+                
+            }catch(InputMismatchException e){
+                System.out.println("Erro, inseriu o preço com '.'\n");
+            }catch(Exception e){
+                System.out.println("Ocorreu um erro.\n");
+                e.printStackTrace();
+            }
             scanner.nextLine();
             //TAXA DE IVA DO PRODUTO
             do{
@@ -222,6 +232,7 @@ public class Restaurante{
             return "O produto " + nomeProduto + " foi adicionado.\n";
         }catch(Exception e){
             System.out.println("Ocorreu um erro.\n");
+            e.printStackTrace();
         }
         return null;
     }
