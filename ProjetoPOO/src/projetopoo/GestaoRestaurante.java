@@ -26,8 +26,8 @@ public class GestaoRestaurante {
                 case 5:System.out.println(restaurante.adicionarItemPedido());break;
                 case 6:System.out.println(restaurante.servirPedido());break;
                 case 7:System.out.println(restaurante.fecharPedido());break;
-                case 8:System.out.println(restaurante.toStringHistoricoPedidos());break;
-                case 9:restaurante.exportarHistorico();break;
+                case 8:System.out.println(restaurante.verHistoricoPedidos());break;
+                case 9:System.out.println(restaurante.exportarHistorico());break;
                 case 0:System.out.println("Vai sair!");break;
             }
         }while(opcao!=0);

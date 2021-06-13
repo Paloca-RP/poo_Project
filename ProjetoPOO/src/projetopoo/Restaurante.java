@@ -395,27 +395,31 @@ public class Restaurante{
         return null;
     }
     
-    public void verHistoricoPedidos(){
+    public String verHistoricoPedidos(){
         try{
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("historicoPedidos.txt"));
             historicoPedidos=(ArrayList<Pedido>) ois.readObject();
             ois.close();
+            return historicoPedidos.toString();
         }catch(Exception e){
             System.out.println("Ocorreu um erro.\n");
             e.printStackTrace();
         }
+        return null;
     }
     
-    public void exportarHistorico(){
+    public String exportarHistorico(){
         try{
             ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("historicoPedidos.txt"));
             oos.writeObject(historicoPedidos);
             oos.flush();
-            oos.close();           
+            oos.close();
+            return "Histórico de Pedidos exportado.\n";
         }catch(Exception e){
             System.out.println("Ocorreu um erro.\n");
             e.printStackTrace();
         }
+        return null;
     }
     
     public String toStringMesas(){
