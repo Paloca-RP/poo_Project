@@ -29,7 +29,9 @@ public class GestaoRestaurante {
                 case 8:System.out.println(restaurante.toStringHistoricoPedidos());break;
                 case 9:restaurante.exportarHistorico();break;
                 case 0:System.out.println("Vai sair!");break;
+                default:System.out.println("Insira uma opção válida.\n");
             }
         }while(opcao!=0);
+        restaurante.exportarHistorico();
     }
 }

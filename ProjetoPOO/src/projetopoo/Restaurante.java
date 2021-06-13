@@ -126,7 +126,6 @@ public class Restaurante{
                 System.out.println("Erro, inseriu o preço com '.'\n");
             }catch(Exception e){
                 System.out.println("Ocorreu um erro.\n");
-                e.printStackTrace();
             }
             scanner.nextLine();
             //TAXA DE IVA DO PRODUTO
