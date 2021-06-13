@@ -1,6 +1,7 @@
 package projetopoo;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -13,7 +14,7 @@ public class Restaurante{
     
     private ArrayList<Produto> produtos;
     private Mesa[] mesas;
-    private ArrayList<Pedido> historicoPedidos;
+    private ArrayList<String> historicoPedidos;
     
     public Restaurante(int numMesas){
         if(numMesas<4)
@@ -21,7 +22,7 @@ public class Restaurante{
         else
             mesas=new Mesa[numMesas];
         produtos=new ArrayList<Produto>();
-        historicoPedidos=new ArrayList<Pedido>();
+        historicoPedidos=importarHistorico();
     }
     
     public void prepararRestaurante(){
@@ -334,7 +335,7 @@ public class Restaurante{
                             mesas[i].getPedidoAtual().setEstado(Estado.FECHADO);
                             mesas[i].getPedidoAtual().setFechadoHora(LocalDateTime.now());
                             String output = "\nO estado do pedido foi alterado para " + mesas[i].getPedidoAtual().getEstado() + "!\n" + apresentarRecibo(numMesa);
-                            historicoPedidos.add(mesas[i].getPedidoAtual());
+                            historicoPedidos.add(mesas[i].getPedidoAtual().toString());
                             mesas[i].setDisponivel(true);
                             mesas[i].getPedidoAtual().setEstado(null);
                             mesas[i].getPedidoAtual().setFechadoHora(null);
@@ -395,31 +396,35 @@ public class Restaurante{
         return null;
     }
     
-    public String verHistoricoPedidos(){
+    public void exportarHistorico(){
         try{
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("historicoPedidos.txt"));
-            historicoPedidos=(ArrayList<Pedido>) ois.readObject();
-            ois.close();
-            return historicoPedidos.toString();
-        }catch(Exception e){
-            System.out.println("Ocorreu um erro.\n");
-            e.printStackTrace();
-        }
-        return null;
-    }
-    
-    public String exportarHistorico(){
-        try{
-            ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("historicoPedidos.txt"));
-            oos.writeObject(historicoPedidos);
+            ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("historicoPedidos.bin"));
+            oos.writeObject(this.historicoPedidos);
             oos.flush();
             oos.close();
-            return "Histórico de Pedidos exportado.\n";
+            System.out.println("Histórico de Pedidos exportado.\n");
         }catch(Exception e){
             System.out.println("Ocorreu um erro.\n");
             e.printStackTrace();
         }
-        return null;
+    }
+    
+    public ArrayList<String> importarHistorico(){
+        ArrayList<String> auxiliar;
+        try{ 
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("historicoPedidos.bin"));
+            auxiliar=(ArrayList<String>) ois.readObject();
+            ois.close();
+        }catch(FileNotFoundException e){
+            System.out.println("O sistema não conseguiu localizar o ficheiro especificado.\n");
+            auxiliar=new ArrayList<String>();
+        }
+        catch(Exception e){
+            System.out.println("Ocorreu um erro.\n");
+            e.printStackTrace();
+            auxiliar=new ArrayList<String>();
+        }
+        return auxiliar;
     }
     
     public String toStringMesas(){
