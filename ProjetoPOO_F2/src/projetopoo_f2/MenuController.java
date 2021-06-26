@@ -28,6 +28,7 @@ import javafx.stage.Stage;
  */
 public class MenuController implements Initializable {
 
+    Stage stage;
     @FXML
     private Label lb_Titulo;
     @FXML
@@ -36,7 +37,6 @@ public class MenuController implements Initializable {
     private Button btn_EXIT;
     @FXML
     private AnchorPane Menu;
-    Stage stage;
     @FXML
     private Button btn_CriarProduto;
     @FXML
