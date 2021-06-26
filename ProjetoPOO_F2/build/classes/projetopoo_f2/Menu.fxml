@@ -1,67 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="Menu" prefHeight="592.0" prefWidth="919.0" style="-fx-background-color: #B0C4DE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetopoo_f2.MenuController">
+<AnchorPane id="AnchorPane" fx:id="Menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="1176.0" style="-fx-background-color: #B0C4DE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetopoo_f2.MenuController">
    <children>
-      <Label fx:id="lb_Titulo" graphicTextGap="0.0" layoutX="427.0" layoutY="32.0" style="-fx-color: white;" styleClass="-fx-color" text="Kebabs do Norte" textAlignment="JUSTIFY" textOverrun="CLIP">
+      <Label fx:id="lb_Titulo" graphicTextGap="0.0" layoutX="543.0" layoutY="32.0" style="-fx-color: white;" styleClass="-fx-color" text="Kebabs do Norte" textAlignment="JUSTIFY" textOverrun="CLIP">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="31.0" />
          </font>
       </Label>
-      <AnchorPane prefHeight="593.0" prefWidth="201.0" style="-fx-background-color: black;">
+      <AnchorPane prefHeight="693.0" prefWidth="202.0" style="-fx-background-color: black;">
          <children>
             <Label layoutX="60.0" layoutY="14.0" text="Menu" textFill="WHITE">
                <font>
                   <Font size="31.0" />
                </font>
             </Label>
-            <Button layoutY="87.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Criar Produto" textFill="WHITE">
+            <Button fx:id="btn_CriarProduto" layoutX="1.0" layoutY="148.0" mnemonicParsing="false" onAction="#show_PaneCriarProduto" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Criar Produto" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button layoutY="137.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Lista Produtos" textFill="WHITE">
+            <Button layoutX="1.0" layoutY="198.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Lista Produtos" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button ellipsisString="" layoutY="187.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Adicionar Items ao Pedido" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button ellipsisString="" layoutX="1.0" layoutY="248.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Adicionar Items ao Pedido" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button ellipsisString="" layoutY="253.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Atualizar Pedido para Servido" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button ellipsisString="" layoutX="1.0" layoutY="314.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Atualizar Pedido para Servido" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button ellipsisString="" layoutY="319.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Fechar Pedido/Apresentar Recibo" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button ellipsisString="" layoutX="1.0" layoutY="380.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Fechar Pedido/Apresentar Recibo" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button ellipsisString="" layoutY="385.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Consultar Histórico de PedidosConsultar Histórico de Pedidos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button ellipsisString="" layoutX="1.0" layoutY="446.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Consultar Histórico de PedidosConsultar Histórico de Pedidos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button ellipsisString="" layoutY="451.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Exportar Histórico de Pedidos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button ellipsisString="" layoutX="1.0" layoutY="512.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Exportar Histórico de Pedidos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button fx:id="btn_EXIT" layoutY="549.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: black;" text="Sair" textFill="WHITE">
+            <Button fx:id="btn_EXIT" layoutY="649.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: black;" text="Sair" textFill="WHITE">
                <font>
                   <Font size="11.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <Label layoutX="325.0" layoutY="338.0" text="ver lista de mesas logo aqui no menu logo logo" />
-      <Label fx:id="lb_NumMesas" layoutX="363.0" layoutY="116.0" text="Variavel do homepage!!" />
+      <Label layoutX="406.0" layoutY="642.0" text="ver lista de mesas logo aqui no menu logo logo" />
+      <Label fx:id="lb_NumMesas" layoutX="215.0" layoutY="55.0" text="passagem de numero de mesas" />
+      <AnchorPane fx:id="Pane_CriarProduto" layoutX="202.0" layoutY="89.0" prefHeight="543.0" prefWidth="975.0">
+         <children>
+            <Button fx:id="btn_Bebida" ellipsisString="" layoutX="220.0" layoutY="32.0" mnemonicParsing="false" onAction="#add_Bebida" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="Bebida" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_Prato" ellipsisString="" layoutX="488.0" layoutY="32.0" mnemonicParsing="false" onAction="#add_Prato" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="Prato" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_Snack" ellipsisString="" layoutX="618.0" layoutY="32.0" mnemonicParsing="false" onAction="#add_Snack" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="Snack" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_Doce" ellipsisString="" layoutX="356.0" layoutY="32.0" mnemonicParsing="false" onAction="#add_Doce" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="Doce" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="panel_Bebida" layoutX="311.0" layoutY="104.0" prefHeight="335.0" prefWidth="300.0" style="-fx-border-color: black;" visible="false">
+               <children>
+                  <ComboBox fx:id="cbx_Iva" accessibleText="sasdas" layoutX="75.0" layoutY="155.0" prefWidth="150.0" promptText="Iva" visibleRowCount="3" />
+                  <TextField fx:id="txt_NomeProduto" layoutX="76.0" layoutY="37.0" />
+                  <ComboBox fx:id="cbx_Tamanho" accessibleText="sasdas" layoutX="75.0" layoutY="215.0" prefWidth="150.0" promptText="Tamanho" visibleRowCount="3" />
+                  <Label layoutX="43.0" layoutY="14.0" text="Nome:" />
+                  <Label layoutX="37.0" layoutY="131.0" text="Taxa Iva:" />
+                  <Label layoutX="33.0" layoutY="191.0" text="Tamanho:" />
+                  <TextField fx:id="txt_Preco" layoutX="76.0" layoutY="92.0" />
+                  <Label layoutX="43.0" layoutY="68.0" text="Preço:" />
+                  <Button fx:id="btn_CAlcool" ellipsisString="" layoutX="14.0" layoutY="273.0" mnemonicParsing="false" onAction="#add_ComAlcool" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="C/Alcool" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_Salcool" ellipsisString="" layoutX="182.0" layoutY="267.0" mnemonicParsing="false" onAction="#add_SemmAlcool" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="S/Alcool" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_Doce" layoutX="311.0" layoutY="104.0" prefHeight="394.0" prefWidth="300.0" style="-fx-border-color: black;" visible="false">
+               <children>
+                  <ComboBox fx:id="cbx_Iva1" accessibleText="sasdas" layoutX="75.0" layoutY="155.0" prefWidth="150.0" promptText="Iva" visibleRowCount="3" />
+                  <TextField fx:id="txt_NomeProduto1" layoutX="76.0" layoutY="37.0" />
+                  <Label layoutX="43.0" layoutY="14.0" text="Nome:" />
+                  <Label layoutX="37.0" layoutY="131.0" text="Taxa Iva:" />
+                  <Label layoutX="33.0" layoutY="191.0" text="Descrição:" />
+                  <TextField fx:id="txt_Preco1" layoutX="76.0" layoutY="92.0" />
+                  <Label layoutX="43.0" layoutY="68.0" text="Preço:" />
+                  <Button fx:id="btn_Caseiro" ellipsisString="" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" onAction="#add_Caseiro" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="Caseiro" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_Fabrica" ellipsisString="" layoutX="182.0" layoutY="340.0" mnemonicParsing="false" onAction="#add_Fabrica" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="Fábrica" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <TextArea layoutX="50.0" layoutY="218.0" prefHeight="103.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_Prato" layoutX="312.0" layoutY="112.0" prefHeight="394.0" prefWidth="300.0" style="-fx-border-color: black;" visible="false">
+               <children>
+                  <ComboBox fx:id="cbx_Iva11" accessibleText="sasdas" layoutX="75.0" layoutY="155.0" prefWidth="150.0" promptText="Iva" visibleRowCount="3" />
+                  <TextField fx:id="txt_NomeProduto11" layoutX="76.0" layoutY="37.0" />
+                  <Label layoutX="43.0" layoutY="14.0" text="Nome:" />
+                  <Label layoutX="37.0" layoutY="131.0" text="Taxa Iva:" />
+                  <Label layoutX="33.0" layoutY="191.0" text="Descrição:" />
+                  <TextField fx:id="txt_Preco11" layoutX="76.0" layoutY="92.0" />
+                  <Label layoutX="43.0" layoutY="68.0" text="Preço:" />
+                  <Button fx:id="btn_prato" ellipsisString="" layoutX="98.0" layoutY="340.0" mnemonicParsing="false" onAction="#add_Fabrica" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="Prato" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <TextArea layoutX="50.0" layoutY="218.0" prefHeight="103.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_Snack" layoutX="356.0" layoutY="112.0" prefHeight="394.0" prefWidth="300.0" style="-fx-border-color: black;">
+               <children>
+                  <ComboBox fx:id="cbx_Iva111" accessibleText="sasdas" layoutX="75.0" layoutY="155.0" prefWidth="150.0" promptText="Iva" visibleRowCount="3" />
+                  <TextField fx:id="txt_NomeProduto111" layoutX="76.0" layoutY="37.0" />
+                  <Label layoutX="43.0" layoutY="14.0" text="Nome:" />
+                  <Label layoutX="37.0" layoutY="131.0" text="Taxa Iva:" />
+                  <Label layoutX="33.0" layoutY="191.0" text="Tamanho:" />
+                  <TextField fx:id="txt_Preco111" layoutX="76.0" layoutY="92.0" />
+                  <Label layoutX="43.0" layoutY="68.0" text="Preço:" />
+                  <Button fx:id="btn_Snack" ellipsisString="" layoutX="98.0" layoutY="340.0" mnemonicParsing="false" onAction="#add_Snack" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: black; -fx-border-color: white;" text="Prato" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="cbx_TamanhoSnack" accessibleText="sasdas" layoutX="75.0" layoutY="217.0" prefWidth="150.0" promptText="Tamanho" visibleRowCount="3" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
