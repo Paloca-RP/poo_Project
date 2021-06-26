@@ -110,8 +110,6 @@ public class MenuController implements Initializable {
     @FXML
     private AnchorPane panel_ListarProdutos;
     @FXML
-    private ComboBox<?> cbx_ListarProdutos;
-    @FXML
     private AnchorPane panel_FecharPedido;
     @FXML
     private ComboBox<?> cbx_NumMESAADDPedido1;
@@ -206,7 +204,7 @@ public class MenuController implements Initializable {
         panel_Prato.setVisible(false);
     }
     //////////////////////////////////////
-    //adicionar o no final aos arrays
+    //adicionar Productdo 
     @FXML
     private void add_ComAlcool(ActionEvent event) {
     
@@ -253,8 +251,7 @@ public class MenuController implements Initializable {
     
 //////////////////////////////////////////////////////////
     //Adicionar Coisas ao pedido
-    @FXML
-    private void panel_AdicionarPedido(ActionEvent event) {
+    private void panel_AdicionarPedido(ActionEvent event) { /// ver botao sHOW add items
         Pane_CriarProduto.setVisible(false);
         panel_Bebida.setVisible(false);
         panel_Doce.setVisible(false);
@@ -311,6 +308,10 @@ public class MenuController implements Initializable {
     @FXML
     private void show_panel_Exportar(ActionEvent event) {///é só exportar e manda se o alert para dizer que ta feito
         
+    }
+
+    @FXML
+    private void show_panel_AtualizarPedido(ActionEvent event) {
     }
     
     
