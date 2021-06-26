@@ -95,6 +95,41 @@ public class MenuController implements Initializable {
     private ComboBox<?> cbx_TamanhoSnack;
     @FXML
     private AnchorPane panel_Snack;
+    @FXML
+    private Button btn_addSnack;
+    @FXML
+    private Button btn_ListarProdutos;
+    @FXML
+    private Button btn_AtualizarPedido;
+    @FXML
+    private Button btn_FecharPedido;
+    @FXML
+    private Button btn_ConsultarHistorico;
+    @FXML
+    private Button btn_Exportar;
+    @FXML
+    private AnchorPane panel_ListarProdutos;
+    @FXML
+    private ComboBox<?> cbx_ListarProdutos;
+    @FXML
+    private AnchorPane panel_FecharPedido;
+    @FXML
+    private ComboBox<?> cbx_NumMESAADDPedido1;
+    private AnchorPane panel_AtualizarPedido;
+    @FXML
+    private ComboBox<?> cbx_NumMESAADDPedido;
+    @FXML
+    private ComboBox<?> cbx_;
+    @FXML
+    private Button btn_ADDItemPedido;
+    @FXML
+    private AnchorPane panel_ConsultarHistorico;
+    @FXML
+    private Button btn_FecharPedido1;
+    @FXML
+    private Button btn_dd;
+    @FXML
+    private AnchorPane panel_AdicionarPedido;
 
     /**
      * Initializes the controller class.
@@ -106,6 +141,10 @@ public class MenuController implements Initializable {
         panel_Doce.setVisible(false);
         panel_Prato.setVisible(false);
         panel_Snack.setVisible(false);
+        panel_ListarProdutos.setVisible(false);
+        panel_FecharPedido.setVisible(false);
+        panel_AdicionarPedido.setVisible(false);
+        panel_ConsultarHistorico.setVisible(false);
     }    
     
     public void diplayNumero(String numMesas) {
@@ -124,71 +163,183 @@ public class MenuController implements Initializable {
             stage.close();
         }   
     }
-
+////////////////////////////////////////////////////////////
+    //Cirar Produto
     @FXML
     private void show_PaneCriarProduto(ActionEvent event) {
-        Showoff();
         Pane_CriarProduto.setVisible(true);
-        
-    }
-
-    @FXML
-    private void add_Bebida(ActionEvent event) {
-        Showoff();
-        panel_Bebida.setVisible(true);
-    }
-
-    @FXML
-    private void add_Prato(ActionEvent event) {
-        Showoff();
-       panel_Prato.setVisible(true);
-    }
-
-    @FXML
-    private void add_Snack(ActionEvent event) {
-        Showoff();
-        panel_Snack.setVisible(true);
-    }
-
-    @FXML
-    private void add_Doce(ActionEvent event) {
-        Showoff();
-        panel_Doce.setVisible(true);
-    }
-
-    @FXML
-    private void add_ComAlcool(ActionEvent event) {
-        Showoff();
-        
-    }
-
-    @FXML
-    private void add_SemmAlcool(ActionEvent event) {
-        Showoff();
-    }
-
-    @FXML
-    private void add_Caseiro(ActionEvent event) {
-        Showoff();
-    }
-
-    @FXML
-    private void add_Fabrica(ActionEvent event) {
-        Showoff();
-    }
-    
-    
-    
-    
-    
-    
-    public void Showoff() {
-        Pane_CriarProduto.setVisible(false);
         panel_Bebida.setVisible(false);
         panel_Doce.setVisible(false);
         panel_Snack.setVisible(false);
         panel_Prato.setVisible(false);
     }
+    //"add_..." serve para mostrar o formaulario de inserção
+    @FXML
+    private void add_Bebida(ActionEvent event) {
+        panel_Bebida.setVisible(true);
+        panel_Doce.setVisible(false);
+        panel_Snack.setVisible(false);
+        panel_Prato.setVisible(false);
+    }
+
+    @FXML
+    private void add_Prato(ActionEvent event) {
+        panel_Bebida.setVisible(false);
+        panel_Doce.setVisible(false);
+        panel_Snack.setVisible(false);
+        panel_Prato.setVisible(true);
+    }
+
+    @FXML
+    private void add_Snack(ActionEvent event) {
+        panel_Bebida.setVisible(false);
+        panel_Doce.setVisible(false);
+        panel_Snack.setVisible(true);
+        panel_Prato.setVisible(false);
+    }
+
+    @FXML
+    private void add_Doce(ActionEvent event) {
+        panel_Doce.setVisible(true);
+        panel_Bebida.setVisible(false);
+        panel_Snack.setVisible(false);
+        panel_Prato.setVisible(false);
+    }
+    //////////////////////////////////////
+    //adicionar o no final aos arrays
+    @FXML
+    private void add_ComAlcool(ActionEvent event) {
+    
+        //se carregar neste insere com alcool
+    }
+
+    @FXML
+    private void add_SemmAlcool(ActionEvent event) {
+       
+        //se carregar neste insere sem alcool
+    }
+
+    @FXML
+    private void add_Caseiro(ActionEvent event) {
+        
+        //se carregar neste insere doce caseiro 
+    }
+
+    @FXML
+    private void add_Fabrica(ActionEvent event) {
+       
+         //se carregar neste insere doce fabrica 
+    }
+    
+    @FXML
+    private void snack(ActionEvent event) {
+        //adicionar Snack
+    }
+//////////////////////////////////////////////////////////
+    //Listar Produtos
+    @FXML
+    private void show_panel_ListarProdutos(ActionEvent event) {
+        Pane_CriarProduto.setVisible(false);
+        panel_Bebida.setVisible(false);
+        panel_Doce.setVisible(false);
+        panel_Prato.setVisible(false);
+        panel_Snack.setVisible(false);
+        panel_ListarProdutos.setVisible(true);
+        panel_FecharPedido.setVisible(false);
+        panel_AdicionarPedido.setVisible(false);
+        panel_ConsultarHistorico.setVisible(false);
+    }
+    
+    
+//////////////////////////////////////////////////////////
+    //Adicionar Coisas ao pedido
+    @FXML
+    private void panel_AdicionarPedido(ActionEvent event) {
+        Pane_CriarProduto.setVisible(false);
+        panel_Bebida.setVisible(false);
+        panel_Doce.setVisible(false);
+        panel_Prato.setVisible(false);
+        panel_Snack.setVisible(false);
+        panel_ListarProdutos.setVisible(false);
+        panel_FecharPedido.setVisible(false);
+        panel_AdicionarPedido.setVisible(true);
+        panel_ConsultarHistorico.setVisible(false);
+    }
+    @FXML
+    private void ADDItemPedido(ActionEvent event) {
+    }
+    
+    
+//////////////////////////////////////////////////////////
+    //Fechar Pedido/apresentar
+    @FXML
+    private void show_panel_FecharPedido(ActionEvent event) {
+        Pane_CriarProduto.setVisible(false);
+        panel_Bebida.setVisible(false);
+        panel_Doce.setVisible(false);
+        panel_Prato.setVisible(false);
+        panel_Snack.setVisible(false);
+        panel_ListarProdutos.setVisible(false);
+        panel_FecharPedido.setVisible(true);
+        panel_AdicionarPedido.setVisible(false);
+        panel_ConsultarHistorico.setVisible(false);
+    }
+    
+    @FXML
+    private void FecharPedido(ActionEvent event) {
+    }
+    
+//////////////////////////////////////////////////////////
+    //Consultar historico
+    @FXML
+    private void show_panel_ConsultarHistorico(ActionEvent event) {
+        Pane_CriarProduto.setVisible(false);
+        panel_Bebida.setVisible(false);
+        panel_Doce.setVisible(false);
+        panel_Prato.setVisible(false);
+        panel_Snack.setVisible(false);
+        panel_ListarProdutos.setVisible(false);
+        panel_FecharPedido.setVisible(false);
+        panel_AdicionarPedido.setVisible(false);
+        panel_ConsultarHistorico.setVisible(true);
+    }
+    
+    
+    
+//////////////////////////////////////////////////////////
+    //Exportar Histórico
+    @FXML
+    private void show_panel_Exportar(ActionEvent event) {///é só exportar e manda se o alert para dizer que ta feito
+        
+    }
+    
+    
+    
+    
+    
+    
+   
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
     
