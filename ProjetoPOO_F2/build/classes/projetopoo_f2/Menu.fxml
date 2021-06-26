@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="Menu" prefHeight="592.0" prefWidth="919.0" style="-fx-background-color: #B0C4DE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetopoo_f2.MenuController">
+   <children>
+      <Label fx:id="lb_Titulo" graphicTextGap="0.0" layoutX="427.0" layoutY="32.0" style="-fx-color: white;" styleClass="-fx-color" text="Kebabs do Norte" textAlignment="JUSTIFY" textOverrun="CLIP">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="31.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="593.0" prefWidth="201.0" style="-fx-background-color: black;">
+         <children>
+            <Label layoutX="60.0" layoutY="14.0" text="Menu" textFill="WHITE">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <Button layoutY="87.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Criar Produto" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutY="137.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Lista Produtos" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button ellipsisString="" layoutY="187.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Adicionar Items ao Pedido" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button ellipsisString="" layoutY="253.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Atualizar Pedido para Servido" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button ellipsisString="" layoutY="319.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Fechar Pedido/Apresentar Recibo" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button ellipsisString="" layoutY="385.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Consultar Histórico de PedidosConsultar Histórico de Pedidos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button ellipsisString="" layoutY="451.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Exportar Histórico de Pedidos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_EXIT" layoutY="549.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: black;" text="Sair" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="325.0" layoutY="338.0" text="ver lista de mesas logo aqui no menu logo logo" />
+      <Label fx:id="lb_NumMesas" layoutX="363.0" layoutY="116.0" text="Variavel do homepage!!" />
+   </children>
+</AnchorPane>

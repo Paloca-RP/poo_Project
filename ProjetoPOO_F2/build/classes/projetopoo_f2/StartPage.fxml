@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="Home" fx:id="HomePanel" prefHeight="297.0" prefWidth="378.0" style="-fx-background-color: #B0C4DE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetopoo_f2.ScenceController">
+   <children>
+      <Label fx:id="lb_Titulo" graphicTextGap="0.0" layoutX="73.0" layoutY="25.0" style="-fx-color: white;" styleClass="-fx-color" text="Kebabs do Norte" textAlignment="JUSTIFY" textOverrun="CLIP">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="31.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_InserirMesa" layoutX="138.0" layoutY="214.0" mnemonicParsing="false" onAction="#switchTo_Menu" prefHeight="46.0" prefWidth="103.0" text="Inserir mesas" />
+      <TextField fx:id="txt_NumMesas" layoutX="170.0" layoutY="149.0" />
+      <Label fx:id="lb_homePage" layoutX="28.0" layoutY="153.0" style="-fx-color: white;" text="Número de Mesas :" />
+   </children>
+</AnchorPane>
