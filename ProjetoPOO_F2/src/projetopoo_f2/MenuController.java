@@ -312,6 +312,15 @@ public class MenuController implements Initializable {
 
     @FXML
     private void show_panel_AtualizarPedido(ActionEvent event) {
+        Pane_CriarProduto.setVisible(false);
+        panel_Bebida.setVisible(false);
+        panel_Doce.setVisible(false);
+        panel_Prato.setVisible(false);
+        panel_Snack.setVisible(false);
+        panel_ListarProdutos.setVisible(false);
+        panel_FecharPedido.setVisible(false);
+        panel_AdicionarPedido.setVisible(true);
+        panel_ConsultarHistorico.setVisible(false);
     }
     
     

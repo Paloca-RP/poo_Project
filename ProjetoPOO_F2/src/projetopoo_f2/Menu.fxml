@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="Menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="3000.0" prefWidth="1176.0" style="-fx-background-color: #B0C4DE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetopoo_f2.MenuController">
+<AnchorPane id="AnchorPane" fx:id="Menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="1176.0" style="-fx-background-color: #B0C4DE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetopoo_f2.MenuController">
    <children>
       <Label fx:id="lb_Titulo" graphicTextGap="0.0" layoutX="543.0" layoutY="32.0" style="-fx-color: white;" styleClass="-fx-color" text="Kebabs do Norte" textAlignment="JUSTIFY" textOverrun="CLIP">
          <font>
@@ -32,7 +32,7 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button fx:id="btn_dd" ellipsisString="" layoutX="1.0" layoutY="248.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Adicionar Items ao Pedido" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="btn_dd" ellipsisString="" layoutX="1.0" layoutY="248.0" mnemonicParsing="false" onAction="#showaddproducto" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Adicionar Items ao Pedido" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="17.0" />
                </font>
@@ -175,69 +175,69 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextArea layoutX="143.0" layoutY="126.0" prefHeight="200.0" prefWidth="577.0" text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="panel_FecharPedido" layoutX="71.0" layoutY="1236.0" prefHeight="543.0" prefWidth="975.0" style="-fx-background-color: #B0C4DE;">
-         <children>
-            <ComboBox fx:id="cbx_NumMESAADDPedido1" layoutX="379.0" layoutY="141.0" prefWidth="150.0" />
-            <Label layoutX="279.0" layoutY="37.0" text="Fechar Pedido e Apresentar Recibo">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="338.0" layoutY="101.0" text="Mesa: ">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Button fx:id="btn_FecharPedido" ellipsisString="" layoutX="388.0" layoutY="431.0" mnemonicParsing="false" onAction="#FecharPedido" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Adicionar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
-            <TextArea layoutX="130.0" layoutY="180.0" prefHeight="200.0" prefWidth="700.0" promptText="Recibo" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="panel_AdicionarPedido" layoutX="71.0" layoutY="693.0" prefHeight="543.0" prefWidth="975.0" style="-fx-background-color: #B0C4DE;">
-         <children>
-            <ComboBox fx:id="cbx_NumMESAADDPedido" layoutX="413.0" layoutY="174.0" prefWidth="150.0" />
-            <Label layoutX="372.0" layoutY="63.0" text="Adicionar Items ao Pedido">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="372.0" layoutY="134.0" text="Mesa: ">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="cbx_" layoutX="413.0" layoutY="281.0" prefWidth="150.0" />
-            <Label layoutX="356.0" layoutY="238.0" text="Produto:">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Button fx:id="btn_ADDItemPedido" ellipsisString="" layoutX="389.0" layoutY="369.0" mnemonicParsing="false" onAction="#ADDItemPedido" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Adicionar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="panel_ConsultarHistorico" layoutX="71.0" layoutY="1779.0" prefHeight="543.0" prefWidth="975.0" style="-fx-background-color: #B0C4DE;">
-         <children>
-            <Label layoutX="414.0" layoutY="50.0" text="Consultar Histórico">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Button fx:id="btn_FecharPedido1" ellipsisString="" layoutX="406.0" layoutY="436.0" mnemonicParsing="false" onAction="#FecharPedido" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Consultar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
-            <TextArea layoutX="148.0" layoutY="185.0" prefHeight="200.0" prefWidth="700.0" promptText="Recibo" />
+            <TextArea layoutX="143.0" layoutY="126.0" prefHeight="200.0" prefWidth="577.0" promptText="Lista de productos" />
+            <AnchorPane fx:id="panel_AdicionarPedido" prefHeight="543.0" prefWidth="975.0" style="-fx-background-color: #B0C4DE;">
+               <children>
+                  <ComboBox fx:id="cbx_NumMESAADDPedido" layoutX="413.0" layoutY="174.0" prefWidth="150.0" />
+                  <Label layoutX="372.0" layoutY="63.0" text="Adicionar Items ao Pedido">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="372.0" layoutY="134.0" text="Mesa: ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbx_" layoutX="413.0" layoutY="281.0" prefWidth="150.0" />
+                  <Label layoutX="356.0" layoutY="238.0" text="Produto:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_ADDItemPedido" ellipsisString="" layoutX="389.0" layoutY="369.0" mnemonicParsing="false" onAction="#ADDItemPedido" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Adicionar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane fx:id="panel_FecharPedido" layoutX="2.0" prefHeight="543.0" prefWidth="975.0" style="-fx-background-color: #B0C4DE;">
+                     <children>
+                        <ComboBox fx:id="cbx_NumMESAADDPedido1" layoutX="379.0" layoutY="141.0" prefWidth="150.0" />
+                        <Label layoutX="279.0" layoutY="37.0" text="Fechar Pedido e Apresentar Recibo">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="338.0" layoutY="101.0" text="Mesa: ">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btn_FecharPedido" ellipsisString="" layoutX="388.0" layoutY="431.0" mnemonicParsing="false" onAction="#FecharPedido" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Adicionar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <TextArea layoutX="130.0" layoutY="180.0" prefHeight="200.0" prefWidth="700.0" promptText="Recibo" />
+                        <AnchorPane fx:id="panel_ConsultarHistorico" layoutX="4.0" prefHeight="543.0" prefWidth="975.0" style="-fx-background-color: #B0C4DE;">
+                           <children>
+                              <Label layoutX="414.0" layoutY="50.0" text="Consultar Histórico">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btn_FecharPedido1" ellipsisString="" layoutX="406.0" layoutY="436.0" mnemonicParsing="false" onAction="#FecharPedido" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" text="Consultar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                              <TextArea layoutX="148.0" layoutY="185.0" prefHeight="200.0" prefWidth="700.0" promptText="Recibo" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
